@@ -1,5 +1,6 @@
 FROM node:16
 ADD . /app
+RUN chmod a+w /app
 WORKDIR /app
 RUN npm install
 ARG COLLECT_USAGE_DATA=false
