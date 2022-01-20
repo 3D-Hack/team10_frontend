@@ -1,0 +1,72 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %} {% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">GreenShip</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">Start</a>
+    </li>
+  </ol>
+</div>
+
+<form action="display" method="GET">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group govuk-!-margin-top-8">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="account-number">
+          What is first vehicle registration?
+        </label>
+      </h1>
+      <div id="account-number-hint" class="govuk-hint"></div>
+
+        <input
+          class="govuk-input govuk-input--width-10"
+          id="vehicle-reg1"
+          name="vehicle-reg1"
+          type="text"
+          spellcheck="false"
+          aria-describedby="vehicle-reg1-hint"
+          validation-pattern="^[A-Z]{2}[0-9]{2}[A-Z]{3}[0-9]{4}$"
+          inputmode="text"
+        />
+  
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group govuk-!-margin-top-8">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="account-number">
+          What is second vehicle registration?
+        </label>
+      </h1>
+      <div id="account-number-hint" class="govuk-hint"></div>
+        <input
+          class="govuk-input govuk-input--width-10"
+          id="vehicle-reg2"
+          name="vehicle-reg2"
+          type="text"
+          spellcheck="false"
+          aria-describedby="vehicle-reg2-hint"
+          validation-pattern="^[A-Z]{2}[0-9]{2}[A-Z]{3}[0-9]{4}$"
+          inputmode="text"
+        />
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <button class="govuk-button" data-module="govuk-button" id="submit">
+      Save Planet
+    </button>
+  </div>
+</div>
+
+</form>
+{% endblock %}
