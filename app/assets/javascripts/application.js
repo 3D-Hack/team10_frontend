@@ -13,7 +13,7 @@ async function callBackend(vrn1, vrn2) {
     headers: myHeaders,
     redirect: 'follow'
   };
-  const response = await fetch(`https://kfqkh8lclf.execute-api.us-east-1.amazonaws.com/emissions?VRM=${vrn1}`, requestOptions)
+  const response = await fetch(`https://kfqkh8lclf.execute-api.us-east-1.amazonaws.com/emissions/data?VRM=${vrn1}`, requestOptions)
   if (!response.ok) {
     const message = `An error has occured: ${response.status}`;
     throw new Error(message);
