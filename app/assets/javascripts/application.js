@@ -10,7 +10,7 @@ $(document).ready(function () {
 
   if (document.URL.includes('display')) {
     const params = (new URL(document.location)).searchParams;
-    const vrn = params.get('vehicle-registration');
+    const vrn = params.get('vehicle-reg1');
     const green = true;
 
     const trees = 30;
