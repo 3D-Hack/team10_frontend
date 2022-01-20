@@ -12,7 +12,7 @@ endblock %} {% block content %}
   </ol>
 </div>
 
-<form action="display" method="GET">
+<form id="inForm" action="display" method="GET">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-form-group govuk-!-margin-top-8">
@@ -37,36 +37,26 @@ endblock %} {% block content %}
     </div>
   </div>
 </div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-form-group govuk-!-margin-top-8">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--l" for="account-number">
-          What is second vehicle registration?
-        </label>
-      </h1>
-      <div id="account-number-hint" class="govuk-hint"></div>
-        <input
-          class="govuk-input govuk-input--width-10"
-          id="vehicle-reg2"
-          name="vehicle-reg2"
-          type="text"
-          spellcheck="false"
-          aria-describedby="vehicle-reg2-hint"
-          validation-pattern="^[A-Z]{2}[0-9]{2}[A-Z]{3}[0-9]{4}$"
-          inputmode="text"
-        />
-    </div>
-  </div>
-</div>
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <button class="govuk-button" data-module="govuk-button" id="submit">
+    <button class="govuk-button" type="button" data-module="govuk-button" id="calculate">
       Save Planet
     </button>
   </div>
 </div>
-
 </form>
+
+<div id="displayResult" class="govuk-grid-row" style="display: none;">
+  <div class="govuk-panel govuk-panel--confirmation" id="background">
+    <h1 class="govuk-panel__title" id="result">You're saving the planet!</h1>
+    <div class="govuk-panel__body">
+      <p class="govuk-body-l govuk-!-margin-0" style="color:white">Your vehicle:</p>
+      <strong id="vrn"></strong>
+      <p><strong id="details" style="color:white"></strong></p>
+    </div>
+    <div class="govuk-!-margin-top-6" id="tree-container"></div>
+  </div>
+</div>
 {% endblock %}
