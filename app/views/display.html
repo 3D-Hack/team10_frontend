@@ -1,0 +1,28 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %} {% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">GreenShip</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">Start</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/display">Display</a>
+    </li>
+  </ol>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-panel govuk-panel--confirmation" id="background">
+    <h1 class="govuk-panel__title" id="result">You're saving the planet!</h1>
+    <div class="govuk-panel__body">
+      <p class="govuk-body-l govuk-!-margin-0" style="color:white">Your vehicle:</p>
+      <strong id="vrn"></strong>
+    </div>
+    <div class="govuk-!-margin-top-6" id="tree-container"></div>
+  </div>
+</div>
+
+{% endblock %}

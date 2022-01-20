@@ -1,0 +1,43 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Prototype Kit {%
+endblock %} {% block content %}
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">GreenShip</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/start">Start</a>
+    </li>
+  </ol>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group govuk-!-margin-top-8">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="account-number">
+          What is your vehicle registration?
+        </label>
+      </h1>
+      <div id="account-number-hint" class="govuk-hint"></div>
+      <form action="display" method="GET">
+        <input
+          class="govuk-input govuk-input--width-10"
+          id="vehicle-registration"
+          name="vehicle-registration"
+          type="text"
+          spellcheck="false"
+          aria-describedby="vehicle-registration-hint"
+          validation-pattern="^[A-Z]{2}[0-9]{2}[A-Z]{3}[0-9]{4}$"
+          inputmode="text"
+        />
+        <button class="govuk-button" data-module="govuk-button" id="submit">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
