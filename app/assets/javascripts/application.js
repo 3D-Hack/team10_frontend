@@ -26,8 +26,9 @@ async function callBackend(vrn1, vrn2) {
 function displayValues(results) {
   for (const property in results.convertCo2) {
     console.log(`${property}: ${results.convertCo2[property]}`);
+    $('#stats').append(`${property} ${results.convertCo2[property]} `);
     for (let i = 0; i < results.convertCo2[property]; i++) {
-      $('#tree-container').prepend(`
+      $('#tree-container').append(`
     <img
       src="/public/images/${property}.png"
       alt="Tree"
@@ -43,7 +44,12 @@ function displayValues(results) {
 async function calculate() {
   $("#inForm").hide();
   try {
-    const results = await callBackend($("#vehicle-reg1").val(), 'bob')
+    const reg = $("#vehicle-reg1").val();
+   // var results = {'co2': 104, 'make': 'VOLVO', 'colour': 'GREY', 'averageKilometersYear': 25653, 'convertCo2': {'trees': 26, 'avocado': 14, 'steaks': 6, 'cheese': 8}}
+    var results = {"co2": 112, "make": "FORD", "colour": "BLACK", "averageKilometersYear": 10000, "convertCo2": {"trees": 112.0, "avocado": 5894.733, "steaks": 280.0, "cheese": 355.55}}
+    if (!(reg.toString().toUpperCase() === 'DVLA')) {
+      results = await callBackend($("#vehicle-reg1").val(), 'bob')
+    }
     if(results.hasOwnProperty('make')){
       displayValues(results)
       $('#vrn').text(`${results.colour} ${results.make}`);
