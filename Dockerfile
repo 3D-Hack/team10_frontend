@@ -1,12 +1,8 @@
 FROM node:16
+ADD . /app
 WORKDIR /app
-COPY package*.json ./
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
-
+ARG COLLECT_USAGE_DATA=false
+RUN echo "{\"collectUsageData\": $COLLECT_USAGE_DATA}" > usage-data-config.json
 EXPOSE 3000
-CMD [ "node", "server.js" ]
+CMD [ "node", "start.js"]
