@@ -26,7 +26,6 @@ async function callBackend(vrn1, vrn2) {
 function displayValues(results) {
   for (const property in results.convertCo2) {
     console.log(`${property}: ${results.convertCo2[property]}`);
-    $('#stats').append(`${property} ${results.convertCo2[property]} `);
     for (let i = 0; i < results.convertCo2[property]; i++) {
       $('#tree-container').append(`
     <img
@@ -54,6 +53,7 @@ async function calculate() {
       displayValues(results)
       $('#vrn').text(`${results.colour} ${results.make}`);
       $('#details').text(`Average KM per year: ${results.averageKilometersYear}`);
+      $('#stats').text(`${results.text_string}`);
     } else {
       console.log('Invalid response')
     }
